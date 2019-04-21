@@ -13,8 +13,9 @@ credentials = ('admin', 'admin')
 
 @app.route('/')
 def index():
+    # Try and see if logged_in session variable exists, if not set it to false
     try:
-        session["logged_in"] == None
+        session["logged_in"] == True
     except KeyError:
         session["logged_in"] = False
     # nothing to show in the index, redirect to login page
